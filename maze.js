@@ -1,7 +1,5 @@
-
+main(bfs);
 var data;
-main();
-
 
 function bfs() {
 	var maze = read();
@@ -157,7 +155,7 @@ function show(maze) {
 	console.log(all);
 }
 
-function main() {
+function main(algorithm) {
 	var process = require("process");
 	process.stdin.setEncoding('utf8');
 	var buffer = "";
@@ -168,6 +166,6 @@ function main() {
 
 	process.stdin.on("end", function() {
 		data = buffer;
-		bfs();
+		algorithm();
 	});
 }

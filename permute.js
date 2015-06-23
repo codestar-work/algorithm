@@ -13,5 +13,5 @@ function permute(s, k) {
 	}
 }
 
-var a = ['A','B','C','D', 'E'];
+var a = ['A','B','C','D'];
 permute(a, a.length);

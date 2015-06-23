@@ -2,7 +2,10 @@ var friend = [
 	["Harry", "Ron"],
 	["Harry", "Hagrid"],
 	["Ron", "Hermione"],
-	["Hermione", "Harry"]
+	["Hermione", "Harry"],
+	["Ron", "Neville"],
+	["Ron", "Luna"],
+	["Draco", "Tom"]
 ];
 
 /*
@@ -30,13 +33,13 @@ function buildMatrix(f) {
 			}
 		}
 	}
-	
+
 	var header = "\t";
 	for (var u in matrix) {
 		header += u + "\t";
 	}
 	// console.log(header);
-	
+
 	for (var u in matrix) {
 		var data = u + "\t";
 		for (var v in matrix) {
@@ -52,8 +55,35 @@ function buildMatrix(f) {
 
 
 var matrix = buildMatrix(friend);
-showCommon(matrix, "Hermione", "Hagrid");
-maxFriend(matrix);
+var a = warshall(matrix);
+
+console.log(a["Hagrid"]["Luna"]);
+console.log(a["Hagrid"]["Draco"]);
+console.log(a["Harry"]["Tom"]);
+
+function warshall(matrix) {
+	var a = [];
+	for (var u in matrix) {
+		a[u] = [];
+		for (var v in matrix) {
+			a[u][v] = matrix[u][v];
+		}
+	}
+
+	for (var t in a) {
+		for (var u in a) {
+			for (var v in a) {
+				a[u][v] = a[u][v] || a[u][t] && a[t][v];
+			}
+		}
+	}
+	return a;
+}
+
+
+
+// showCommon(matrix, "Hermione", "Hagrid");
+// maxFriend(matrix);
 
 function showCommon(matrix, u, v) {
 	for (var f in matrix) {
@@ -83,4 +113,5 @@ function maxFriend(matrix) {
 		}
 	}
 	console.log(maxName + " " + maxValue);
+	listFriend(maxName);
 }
