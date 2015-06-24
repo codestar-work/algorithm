@@ -1,5 +1,5 @@
 var numbers = [];
-numbers = [5, 2, 8, 1];
+numbers = [5, 2, 1, 8];
 numbers = [5, 2, 8, 3];
 
 function partition(numbers) {
@@ -8,7 +8,7 @@ function partition(numbers) {
 		sum += numbers[i];
 	}
 	if (sum % 2 != 0) return false;
-	
+
 	var possible = [];
 	for (var i = 0; i < numbers.length; i++) {
 		possible[i] = [];
@@ -18,7 +18,7 @@ function partition(numbers) {
 	}
 	possible[0][0] = true;
 	possible[0][numbers[0]] = true;
-	
+
 	for (var i = 1; i < numbers.length; i++) {
 		for (var j = 0; j <= sum; j++) {
 			var previous = j - numbers[i];
@@ -29,7 +29,7 @@ function partition(numbers) {
 			}
 		}
 	}
-	
+
 	return possible[numbers.length-1][sum/2];
 }
 

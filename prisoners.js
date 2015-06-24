@@ -34,11 +34,15 @@ function solve(data) {
 	}
 }
 
-var data = "";
 var cache = [];
 var list = [];
+var buffer = "";
 
-process.stdin.resume();
-process.stdin.setEncoding("UTF8");
-process.stdin.on("data", function (d) { data += d; });
-process.stdin.on("end", function () { solve(data);});
+process.stdin.setEncoding('utf8');
+process.stdin.on("readable", function() {
+	var chunk = process.stdin.read();
+	buffer += chunk == null ? "" : chunk;
+});
+process.stdin.on("end", function() {
+	solve(buffer);
+});
