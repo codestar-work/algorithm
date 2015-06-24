@@ -18,7 +18,7 @@ function count(s, p) {
 			}
 		}
 	}
-	
+
 	return table[p.length-1];
 }
 
@@ -26,10 +26,10 @@ function parse(data) {
 	var lines = data.split("\n");
 	var T = parseInt(lines[0]);
 	for (var i = 1; i <= T; i++) {
-		var result = count(lines[i].toUpperCase(), pattern.toUpperCase());
+		var result = count(lines[i], pattern);
 		var info = result % 10000;
-		if (result < 10) info = "000" + result; else 
-		if (result < 100) info = "00" + result; else 
+		if (result < 10) info = "000" + result; else
+		if (result < 100) info = "00" + result; else
 		if (result < 1000) info = "0" + result;
 		console.log("Case #" + i + ": " + info);
 	}
@@ -43,7 +43,7 @@ function main() {
 		var chunk = process.stdin.read();
 		buffer += chunk == null ? "" : chunk;
 	});
-	
+
 	process.stdin.on("end", function() {
 		parse(buffer);
 	});
@@ -57,7 +57,7 @@ main();
 w 1 2 2 2 2 2 2 2 2 2 2 2 2 2
 e 0 0 2 4 4 4 4 4 4 4 4 4 6 8
 l 0 0 0 0 4 8 8 8 8 8 8 8 8 8
-c 0 0 0 0 0 0 8 
+c 0 0 0 0 0 0 8
 o
 m
 e
@@ -68,11 +68,3 @@ var s = "";
 s = "wweellccoommee to code qps jam";
 // s = "welcome to code jam";
 */
-
-
-
-
-
-
-
-
