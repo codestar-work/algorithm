@@ -4,14 +4,14 @@ function permute(s, k) {
 		count++;
 		console.log(count + ' ' + s);
 	} else {
-		for (var i = k-1; i >= 0; i--) {
+		for (var i = k; i >= 0; i--) {
 			var tmp;
-			tmp = s[k-1]; s[k-1] = s[i]; s[i] = tmp;
+			tmp = s[k]; s[k] = s[i]; s[i] = tmp;
 			permute(s, k-1);
-			tmp = s[k-1]; s[k-1] = s[i]; s[i] = tmp;
+			tmp = s[k]; s[k] = s[i]; s[i] = tmp;
 		}
 	}
 }
 
 var a = ['A','B','C','D'];
-permute(a, a.length);
+permute(a, a.length-1);
