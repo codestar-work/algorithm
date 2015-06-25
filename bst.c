@@ -1,3 +1,6 @@
+// compile: gcc bst.c
+// execute: ./a.out
+
 #include <stdio.h>
 #include <stdlib.h>
 

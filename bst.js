@@ -28,10 +28,8 @@ function print(node) {
 
 /*
 var root = null;
-
 for (var i = 0; i < 100; i++) {
 	root = insert(root, parseInt(Math.random() * 100));
 }
-
 print(root);
 */

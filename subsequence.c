@@ -1,5 +1,5 @@
 // compile: gcc subsequence.c
-// run:     ./a.out < subsequence.txt
+// execute: ./a.out < subsequence.txt
 
 #include <stdio.h>
 #include <stdlib.h>

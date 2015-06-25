@@ -1,3 +1,6 @@
+// compile: gcc partition.c
+// execute: ./a.out
+
 #include <stdio.h>
 #define MAX 1024
 

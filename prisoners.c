@@ -1,7 +1,10 @@
-#include <stdio.h>
-#define MAX 10500
+// compile: gcc prisoners.c
+// run:     ./a.out < prisoners.txt
 
-int cache[MAX][MAX];
+#include <stdio.h>
+#define MAX 10000
+
+int cache[MAX+1][MAX+1];
 int a[MAX];
 int N, P;
 
