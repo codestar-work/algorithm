@@ -1,0 +1,8 @@
+3
+London
+Sydney
+Bangkok
+3
+Bangkok London 1400
+London Sydney 1500
+Sydney Bangkok 700

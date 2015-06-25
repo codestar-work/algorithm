@@ -1,5 +1,0 @@
-Harry	Ron
-Harry	Luna
-Hermione	Luna
-Hermione	Long
-Hermione	Cho
