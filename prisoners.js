@@ -1,4 +1,6 @@
-function dp(left, right) {
+// run: node prisoners.js < prisoners.txt
+
+function solve(left, right) {
 	var key = left + "-" + right;
 	if (cache[key] != null) return cache[key]
 	if (right <= left) return cache[key] = 0;
@@ -8,8 +10,8 @@ function dp(left, right) {
 		if (list[i] >= left && list[i] <= right) {
 			var gold = {
 				value: right - left,
-				left:  dp(left, list[i] - 1),
-				right: dp(list[i] + 1, right)
+				left:  solve(left, list[i] - 1),
+				right: solve(list[i] + 1, right)
 			}
 			var sum = gold.value + gold.left + gold.right;
 			min = Math.min(min || sum, sum);
@@ -19,7 +21,7 @@ function dp(left, right) {
 	return cache[key] = min;
 }
 
-function solve(data) {
+function parse(data) {
 	var lines = data.split("\n");
 	var T = parseInt(lines[0]);
 	for (var t = 1; t <= T; t++) {
@@ -29,7 +31,7 @@ function solve(data) {
 		for (var i = 0; i < list.length; i++)
 			list[i] = parseInt(list[i]);
 		cache = [];
-		var result = dp(1, prisoner);
+		var result = solve(1, prisoner);
 		console.log("Case #" + t + ": " + result);
 	}
 }
@@ -44,5 +46,5 @@ process.stdin.on("readable", function() {
 	buffer += chunk == null ? "" : chunk;
 });
 process.stdin.on("end", function() {
-	solve(buffer);
+	parse(buffer);
 });

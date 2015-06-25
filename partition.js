@@ -1,3 +1,5 @@
+// run: node partition.js
+
 var numbers = [];
 numbers = [5, 2, 1, 8];
 numbers = [5, 2, 8, 3];

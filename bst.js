@@ -1,5 +1,3 @@
-// BST in ES6
-
 function Node(data) {
 	this.data  = data;
 	this.left  = null;
@@ -24,7 +22,7 @@ function print(node) {
 	if (node != null) {
 		print(node.left);
 		console.log(node.data);
-		print(node.right);		
+		print(node.right);
 	}
 }
 

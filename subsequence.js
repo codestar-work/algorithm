@@ -1,3 +1,5 @@
+// run by node subsequence.js < subsequence.txt
+
 var pattern = "welcome to code jam";
 
 function count(s, p) {
