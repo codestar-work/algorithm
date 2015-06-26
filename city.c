@@ -17,7 +17,8 @@ int getIndex(char *s) {
 			return i;
 		}
 	}
-	return -1;
+	strcpy(name[vertex++], s);
+	return vertex-1;
 }
 
 void buildMatrix() {
@@ -27,10 +28,6 @@ void buildMatrix() {
 		}
 	}
 
-	scanf("%d\n", &vertex);
-	for (int i = 0; i < vertex; i++) {
-		gets(name[i]);
-	}
 	scanf("%d\n", &edge);
 	for (int i = 0; i < edge; i++) {
 		char s[NAME_LENGTH];

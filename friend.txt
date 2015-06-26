@@ -1,9 +1,3 @@
-5
-Harry
-Ron
-Cho
-Hagrid
-Luna
 4
 Harry Ron
 Harry Cho
