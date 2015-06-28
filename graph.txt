@@ -1,0 +1,5 @@
+Harry	Ron	1
+Harry	Hagrid	1
+Ron	Ginny	1
+Harry	Luna	1
+Luna	Ginny	1
