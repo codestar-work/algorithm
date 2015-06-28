@@ -59,7 +59,36 @@ void printMatrix() {
 	}
 }
 
+int min(int a, int b) {
+	if (a < b) return a;
+	return b;
+}
+
+void floyd() {
+	for (int t = 0; t < vertex; t++) {
+		for (int i = 0; i < vertex; i++) {
+			for (int j = 0; j < vertex; j++) {
+				matrix[i][j] = min(matrix[i][j], matrix[i][t] + matrix[t][j]);
+			}
+		}
+	}
+}
+
 int main() {
 	buildMatrix();
 	printMatrix();
+	floyd();
+	printMatrix();
 }
+
+
+
+
+
+
+
+
+
+
+
+//

@@ -18,7 +18,7 @@ void permute(char *s, int k) {
 
 char s[26];
 int main() {
-	strcpy(s, "ABCD");
+	strcpy(s, "ABCDE");
 	permute(s, strlen(s)-1);
 	return 0;
 }

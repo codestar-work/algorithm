@@ -30,7 +30,7 @@ void readMaze() {
 }
 
 void search(int r, int c, int goalRow, int goalCol) {
-	printf("%d %d\n", r, c);
+	// printf("%d %d\n", r, c);
 	if (r == goalRow && c == goalCol) {
 		printMaze();
 	} else {

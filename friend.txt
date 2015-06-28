@@ -1,5 +1,9 @@
-4
+8
 Harry Ron
-Harry Cho
 Harry Hagrid
+Hagrid Luna
+Luna Harry
 Luna Cho
+Cho Ron
+Draco Tom
+Cho Draco

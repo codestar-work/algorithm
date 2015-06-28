@@ -57,7 +57,53 @@ void printMatrix() {
 	}
 }
 
+void findMaxFriend() {
+	int maxFriendIndex = 0;
+	int maxFriendCount = 0;
+	for (int i = 0; i < vertex; i++) {
+		int count = 0;
+		for (int j = 0; j < vertex; j++) {
+			if (matrix[i][j] == 1) {
+				count++;
+			}
+		}
+		if (maxFriendCount < count) {
+			maxFriendCount = count;
+			maxFriendIndex = i;
+		}
+	}
+	printf("%s has maximum number of friend which is %d\n",
+		name[maxFriendIndex], maxFriendCount-1);
+}
+
+void commonFriend(char *s, char *t) {
+	int a = getIndex(s);
+	int z = getIndex(t);
+	for (int t = 0; t < vertex; t++) {
+		if (matrix[a][t] && matrix[t][z]) {
+			printf("%s\n", name[t]);
+		}
+	}
+}
+
+int isConnect(char *r, char *s) {
+	int rIndex = getIndex(r);
+	int sIndex = getIndex(s);
+	for (int t = 0; t < vertex; t++) {
+		for (int a = 0; a < vertex; a++) {
+			for (int z = 0; z < vertex; z++) {
+				matrix[a][z] = matrix[a][z] ||
+							  (matrix[a][t] && matrix[t][z]);
+			}
+		}
+	}
+	return matrix[rIndex][sIndex];
+}
+
 int main() {
 	buildMatrix();
 	printMatrix();
+	printf("%d\n", isConnect("Luna", "Ron"));
+	printf("%d\n", isConnect("Hagrid", "Tom"));
+	return 0;
 }
