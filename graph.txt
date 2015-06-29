@@ -1,5 +1,6 @@
-Harry	Ron	1
-Harry	Hagrid	1
-Ron	Ginny	1
-Harry	Luna	1
-Luna	Ginny	1
+Bangkok	HuaHin	200
+Bangkok	Pattaya	150
+Bangkok	Supan	100
+Bangkok	Korat	300
+Pattaya	Korat	420
+Supan	Korat	150
