@@ -18,7 +18,7 @@ class Prisoners {
 			}
 		}
 		if (result == Integer.MAX_VALUE)
-		result = 0;
+			result = 0;
 		mem.put(key, result);
 		return result;
 	}
