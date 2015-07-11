@@ -35,7 +35,6 @@ class Maze {
 		PutQueue(row, col, -1);
 		while (!IsQueueEmpty()) {
 			QueueItem current = GetQueue();
-			Console.WriteLine(current.ToString());
 
 			if (current.row == goalRow && current.col == goalCol) {
 				for (int i = 0; i < height; i++) {
